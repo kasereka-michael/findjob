@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}" />
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css}" crossorigin="anonymous">
+    <title>Login</title>
+</head>
+<body>
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form th:action="@{/api/jobseeker/registration}" th:object="${user}" method="post">
+            <h1>Create Account</h1>
+            <input type="text" placeholder="Name" name="username" th:field="*{userName}" class="input-field" id="username"/>
+            <span class="on-error username"></span>
+            <input type="email" placeholder="Email" name="email" th:field="*{userEmail}" class="input-field" id="useremail"/>
+            <span class="on-error email"></span>
+            <input type="password" placeholder="Password" name="password" th:field="*{password}" class="input-field" id="userpassword"/>
+            <span class="on-error password"></span>
+            <input type="password" placeholder="Confirm Password" name="cpasword" class="input-field" id="confirmpassword"/>
+            <span class="on-error confirm"></span>
+            <input type="hidden" placeholder="Confirm Password" name="role" th:value="${role}">
+            <div class="container-view-btn">
+                <input type="checkbox" id="passwordView" onchange="togglePasswordVisibility()"/> <p class="view">view password</p>
+            </div>
+            <button type="submit" onclick="return validateForm()" class="btn-btn">Sign Up</button>
+
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form action="#">
+            <h1>Sign in</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your account</span>
+            <input type="email" placeholder="Email"  class="input-field"/>
+            <input type="password" placeholder="Password"  class="input-field"/>
+            <a th:href="@{/api/operation_for_all/forgotpassword}">Forgot your password?</a>
+            <button class="btn-btn">Sign In</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost btn-btn" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start journey with us</p>
+                <button class="ghost btn-btn" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>
+        Powered by
+        <a target="_blank" href="mailto:michaeljazziry64@gmail.com">find-job</a>
+    </p>
+</footer>
+    <script th:src="@{/js/login.js}"></script>
+    <script type="text/javascript">
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add("right-panel-active");
+            document.title = 'SignUp';
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove("right-panel-active");
+            document.title = 'Login';
+        });
+
+
+        function validateForm() {
+            var username = document.getElementById('username').value;
+            var useremail = document.getElementById('useremail').value;
+            var password = document.getElementById('userpassword').value;
+            var confirmpassword = document.getElementById('confirmpassword').value;
+
+            // Clear previous error messages
+            document.querySelectorAll('.on-error').forEach(function (element) {
+                element.innerHTML = '';
+            });
+
+            if (username.trim() === '' ){
+                document.querySelector('.on-error.username').innerHTML = 'Username is required.';
+                return false;
+            }else if(useremail.trim() === ''){
+                document.querySelector('.on-error.email').innerHTML = 'Email is required.';
+                return false;
+            }
+            else if (password.trim() === '' ){
+                document.querySelector('.on-error.password').innerHTML = 'Password is required.';
+                return false;
+            }
+            else if(confirmpassword.trim() === ''){
+                document.querySelector('.on-error.confirm').innerHTML = 'Confirm Password is required.';
+                return false;
+            }
+            else if (!(password.trim() === confirmpassword.trim())){
+                document.querySelector('.on-error.confirm').innerHTML = "password don't match.";
+                return false;
+            }
+            else if(password.trim().length < 8){
+                document.querySelector('.on-error.password').innerHTML = 'password should contain at leat 8 characters';
+                return false;
+            }
+            return true;
+        }
+
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById('password');
+            var passwordcon = document.getElementById('confirmpassword');
+            var passwordViewCheckbox = document.getElementById('passwordView');
+            if (passwordViewCheckbox.checked) {
+                passwordInput.type = 'text';
+                passwordcon.type ='text';
+            } else {
+                passwordcon.type = 'password';
+                passwordInput.type = 'password';
+            }
+        }
+
+    </script>
+</body>
+</html>

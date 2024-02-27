@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/forgotPassword.css}" />
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css}" crossorigin="anonymous">
+    <title>renew password</title>
+</head>
+<body>
+
+<div class="container">
+    <form th:action="@{/api/operation_for_all/optCheck}" method="get" th:object="${useropt}">
+        <div class="input-group" id="otp-group" >
+            <label for="otp">Enter the code we have sent to your email:</label>
+            <input type="text" id="otp" name="otp" th:field="*{userOpt}" required>
+        </div>
+
+        <button class="button" id="otp-btn" onclick="verifyOTP()">Verify OTP</button>
+    </form>
+</div>
+</body>
+</html>

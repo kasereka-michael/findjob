@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>home</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" th:href="@{/css/main.css}"/>
+		<link rel="stylesheet" th:href="@{https://unpkg.com/aos@next/dist/aos.css}"/>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header" data-aos="fade-up">
+				
+				<nav id="nav" >
+					<ul>
+						<li>
+							<a href="#one" class="active icon solid fa-info-circle menu-icon" title="About"></a>
+							<span class="menu-title">About us</span>
+						</li>
+						<li>
+							<a href="#two" class="icon solid fa-cogs menu-icon" title="Service"></a>
+							<span class="menu-title">Service</span>
+						</li>
+						<li>
+							<a href="#three" class="icon solid fa-comment-dots menu-icon" title="Testimonies"></a>
+							<span class="menu-title">Testimonies</span>
+						</li>
+						<li><a href="#four" class="icon solid fa-envelope menu-icon" title="Contact"></a>
+							<span class="menu-title">Contact us</span>
+						</li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="image main" data-position="center">
+									<img th:src="@{/images/banner.png}" alt="calico image" />
+								</div>
+								<div class="container">
+									<header class="major">
+										<h2 class="header-architecture" data-aos="fade-in">Building Success Together
+											  <span class="btn-container">
+												<p class="open-account">choose to open your account as:</p>
+												<a th:href="@{/api/employer/form?role=EMPLOYER}" class="account-creation-btn">Company</a>
+												<a th:href="@{/api/jobseeker/form?role=JOB_SEEKER}" class="account-creation-btn">job seeker</a>
+											  </span>
+										</h2>
+										<p>Collaborating to build success stories<br />
+										with your best platform <a href="https://www.findjob.com">findjob</a>.</p>
+									</header>
+									<p>Unlock unparalleled opportunities and discover a world of possibilities tailored to your career goals. Join us in shaping the future of hiring, where innovation meets talent, and success begins with every connection.</p>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" data-aos="fade-left">
+								<div class="container">
+									<h3>What we can do for you</h3>
+									<p>Then, let us be your strategic partner in achieving your professional aspirations or organizational objectives. Here's what we can do for you</p>
+									<ul class="feature-icons">
+										<li class="icon solid fa-search">
+											<span class="service-head">Efficient Recruitment</span>
+											<p>Efficiently find the right candidates quickly with our advanced recruitment tools.</p>
+										</li>
+								
+										<li class="icon solid fa-chart-bar">
+											<span class="service-head">Enhanced Visibility</span>
+											<p>Increase your company's visibility and attract top talent through our comprehensive platform.</p>
+										</li>
+								
+										<li class="icon solid fa-users">
+											<span class="service-head">Diverse Talent Pool</span>
+											<p>Access a diverse pool of qualified professionals, fostering an inclusive and dynamic workforce.</p>
+										</li>
+								
+										<!-- For Job Seekers -->
+										<li class="icon solid fa-briefcase">
+											<span class="service-head">Wide Job Selection</span>
+											<p>Explore a broad range of job opportunities tailored to your skills and preferences.</p>
+										</li>
+								
+										<li class="icon solid fa-id-badge">
+											<span class="service-head">Professional Branding</span>
+											<p>Showcase your skills and experience with a professionally curated profile to stand out to employers.</p>
+										</li>
+								
+										<li class="icon solid fa-bell">
+											<span class="service-head">Smart Job Matching</span>
+											<p>Receive personalized job alerts matching your expertise and career goals for targeted opportunities.</p>
+										</li>
+								
+										<!-- For Everyone -->
+										<li class="icon solid fa-desktop">
+											<span class="service-head">User-Friendly Interface</span>
+											<p>Navigate our user-friendly platform with ease, ensuring a smooth experience for all users.</p>
+										</li>
+								
+										<li class="icon solid fa-lock">
+											<span class="service-head">Secure Environment</span>
+											<p>Rest assured in a secure online environment that prioritizes data privacy and protection.</p>
+										</li>
+								
+										<li class="icon solid fa-lightbulb">
+											<span class="service-head">Continuous Innovation</span>
+											<p>Benefit from continuous platform enhancements and innovations, keeping you at the forefront of the hiring landscape.</p>
+										</li>
+								
+										<li class="icon solid fa-comments">
+											<span class="service-head">Community Support</span>
+											<p>Join a supportive community of professionals, fostering collaboration and networking opportunities.</p>
+										</li>
+								
+										<li class="icon solid fa-rocket">
+											<span class="service-head">Your Success, Our Mission</span>
+											<p>Your success is our mission, and we are committed to empowering individuals and companies to thrive in their respective journeys.</p>
+										</li>
+									</ul>
+								</div>
+							</section>
+
+						<!-- Three -->
+							<section id="three" data-aos="fade-right">
+								<div class="container">
+									<h3>Testimonies</h3>
+									<p>Read some of the testimonies from among thousands of people we have helped. Their stories reflect the impact of our platform on careers and businesses. Discover firsthand experiences and success stories that highlight the transformative power of connecting talent with opportunities. These testimonials showcase the diverse journeys and achievements within our community, emphasizing the value we bring to both job seekers and employer companies.</p>
+									<div class="features">
+										<article>
+											<a href="#" class="image"><img th:src="@{/images/pic01.jpg}" alt="" /></a>
+											<div class="inner">
+												<h4>Name: Sarah Thompson</h4>
+												<p>"Discovering this platform was a game-changer for my job search! The personalized job alerts and user-friendly interface made finding the perfect opportunity a breeze. I connected with my dream job within weeks, and the continuous support from the community was invaluable. Thank you for helping me kickstart my career journey!"</p>
+											</div>
+										</article>
+										<article>
+											<a href="#" class="image"><img th:src="@{/images/pic02.jpg}" alt="" /></a>
+											<div class="inner">
+												<h4>Company: InnovateTech Solutions</h4>
+												<p>"Our experience with this platform has been outstanding. The diverse talent pool allowed us to find the right candidates efficiently. The innovative features, such as real-time communication and advanced filtering, made the recruitment process seamless. We've built a dynamic team with the help of this platform, and we continue to be impressed by the continuous innovations."</p>
+											</div>
+										</article>
+										<article>
+											<a href="#" class="image"><img th:src="@{/images/pic03.jpg}" alt="" /></a>
+											<div class="inner">
+												<h4>Name: Alex Johnson (Job Seeker) & XYZ Corporation (Company)</h4>
+												<p>"As a job seeker, I found my ideal position through this platform's user-friendly interface and smart job matching. The communication with XYZ Corporation was smooth, and the company's commitment to diversity and inclusion aligned with my values. Joining the team at XYZ has been a rewarding experience, showcasing the platform's effectiveness in connecting talent with companies."</p>
+											</div>
+										</article>
+									</div>
+								</div>
+							</section>
+
+						<!-- Four -->
+							<section id="four" data-aos="fade-up">
+								<div class="container">
+									<h3>Contact us</h3>
+									<form method="post" action="#">
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
+											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
+											<div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
+											<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" class="primary" value="Send Message" /></li>
+													<li><input type="reset" value="Reset Form" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</div>
+							</section>
+
+						<!-- Five -->
+
+							<section id="five">
+
+								<div class="container">
+									<section>
+										<h4>Image</h4>
+										<h5>Fit</h5>
+										<span class="image fit"><img th:src="@{/images/banner.png}" alt="" /></span>
+
+										<h5>Left &amp; Right</h5>
+										<p><span class="image left"><img th:src="@{/images/avatar.jpg}" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+										<p><span class="image right"><img th:src="@{/images/avatar.jpg}" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+									</section>
+								</div>
+
+							</section>
+
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>&copy; FINDJOB. All rights reserved.</li><li>developed by: <a href="https://www.findjob.com">findjob</a></li>
+							</ul>
+						</div>
+					</section>
+			</div>
+
+		<!-- Scripts -->
+			<script th:src="@{https://unpkg.com/aos@next/dist/aos.js}"></script>
+			<script type="text/javascript">AOS.init();</script>
+			<script th:src="@{/js/jquery.min.js}"></script>
+			<script th:src="@{/js/jquery.scrollex.min.js}"></script>
+			<script th:src="@{/js/jquery.scrolly.min.js}"></script>
+			<script th:src="@{/js/browser.min.js}"></script>
+			<script th:src="@{/js/breakpoints.min.js}"></script>
+			<script th:src="@{/js/util.js}"></script>
+			<script th:src="@{/js/main.js}"></script>
+
+	</body>
+</html>
